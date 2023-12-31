@@ -3,11 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p>Welcome</p>
+    <!-- side nav bar (left)-->
+    <div class="side-bar">
+        <div class="profile-bio">
+            <!-- profile picture -->
+            <div class="profile-container">
+                <img src="assets/images/Enterprise-D.jpg" alt="elijah-small" srcset="" class="profile-pic">
+            </div>
+            <!-- bio and description -->
+            <div class="bio">
+                <h2>Elijah Wandimi</h2>
+                <h3>Data scientist | Data engineer | Machine learning engineer</h3>
+            </div>
+        </div>
+        <!-- nav bar -->
+        <div class="nav-container">
+            <ul class="nav-bar">
+                <div class="nav-item">
+                    <li class=""><a href="#intro"><span><i class="fa-light fa-house"></i>Introduction</span></a></li>
+                </div>
+                <div class="nav-item">
+                    <li class="nav-item"><a href="#portfolio"><span><i class="fa-regular fa-list"></i>Analytics Portfolio</span></a></li>
+                </div>
+                <div class="nav-item">
+                    <li class="nav-item"><a href="#contact"><span><i class="fa-regular fa-envelope"></i>Contact</span></a></li>
+                </div>
+            </ul>
+        </div>
+        <!-- social links -->
+        <div class="social-container">
+            <div class="socials">
+                <!-- linkedin -->
+                <a href="https://www.linkedin.com/in/ElijahWandimi/"><span><i class="fa-brands fa-linkedin"></i></span></a>
+                <!-- github -->
+                <a href="https://github.com/ElijahWandimi"><span><i class="fa-brands fa-github"></i></span></a>
+                <!-- X (twitter) -->
+                <a href="https://twitter.com/elijah_wandimi"><span><i class="fa-brands fa-x-twitter"></i></span></a>
+                <!-- email -->
+                <a href="#contact"><span><i class="fa-regular fa-envelope"></i></span></a>
+            </div>
+        </div>
     </div>
+
+    <!-- right -->
+    <div class="right-box">
+        <!-- top intro -->
+        <div class="intro-section" id="intro">
+            <div class="profile-big">
+                <img src="assets/images/Enterprise-D.jpg" alt="elijah-small" srcset="" class="profile-pic-big">
+            </div>
+            <div class="description">
+                <h2>Elijah Wandimi</h2>
+                <h3>Data scientist | Data engineer | Machine learning engineer</h3>
+                <h4>My job is to have deep conversations with data. From data collection to reporting, I build data ingestion pipelines and leverage ETL/ELT 
+                    processes to transform and load data in warehouses and all the way to data analysis and modelling. Use machine and deep learning to uncover complex 
+                    patterns in data and create intelligent systems in computer vision and nlp. I am commited to life-long learning and celebrate diversity in people
+                    I work with. Currently taking NYU's deep learning course to acquire a deeper understanding of deep learning algrithms and architectures and the
+                    mathematics behind them. </h4>
+            </div>
+        </div>
+
+        <!-- projects -->
+        <div class="projects-section" id="portfolio">
+            <div>
+                <div class="titleSection">
+                    <h1>Analytics and Machine Learning Portfolio</h1>
+                </div>
+                <div>
+                    <iframe src="notebooks/autoinland_insurance_claims.html" width="80%" height="800px" frameborder="5"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Under construction notice - Temporary TODO:Remove aver completion -->
+        <div class="nb"><h5>Under construction</h5></div>
+    </div>
+
 </body>
 </html>
