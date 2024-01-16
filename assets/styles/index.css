@@ -104,6 +104,7 @@ body {
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
+
 }
 /* Introduction */
 .intro-section {
@@ -250,6 +251,7 @@ body {
     font-size: large;
     cursor: pointer;
 }
+
 
 /* extra */
 .nb {
