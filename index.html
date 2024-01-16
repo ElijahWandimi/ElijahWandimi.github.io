@@ -79,122 +79,94 @@
             </div>
         </div>
 
-        <!-- projects -->
-        <div class="projects-section" id="portfolio">
-            <div>
-                <div class="titleSection">
-                    <h1>Analytics and Machine Learning Portfolio</h1>
-                </div>
-                <div class="projects-grid">
-                    <!-- row 0 -->
-                    <div class="row">
-                        <!-- TODO: Add individual projects to each slot and make them clickable -->
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                    </div>
-                    <!-- row 1 -->
-                    <div class="row">
-                        <!-- TODO: Add individual projects to each slot -->
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                    </div>
-                    <!-- row 2 -->
-                    <div class="row">
-                        <!-- TODO: Add individual projects to each slot -->
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                        <div class="slot">
-                            <div class="p_pic">
-                                <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
-                            </div>
-                            <div class="p_title">
-                                XGBOOST: Bayesian optimisation for Hyperparameters
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="main-container" id="main-container">
+            <!-- projects -->
+            <div class="projects-section" id="portfolio">
                 <div>
-                    <iframe src="notebooks/autoinland_insurance_claims.html" width="80%" height="800px" frameborder="5"></iframe>
+                    <div class="titleSection">
+                        <h1>Analytics and Machine Learning Portfolio</h1>
+                    </div>
+                    <div class="projects-grid">
+                        <!-- row 0 -->
+                        <div class="row">
+                            <!-- TODO: Add individual projects to each slot and make them clickable -->
+                            <div class="slot"  data-file="pages/bayes.html">
+                                <div class="p_pic">
+                                    <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
+                                </div>
+                                <div class="p_title">
+                                    XGBOOST: Bayesian optimisation for Hyperparameters
+                                </div>
+                            </div>
+                            <div class="slot">
+                                <a href="https://lookerstudio.google.com/s/k98NeJJ0Xq4">
+                                    <div class="p_pic">
+                                        <img src="assets/images/month.png" alt="graphical-vis" srcset="">
+                                    </div>
+                                    <div class="p_title">
+                                        Monthly Prices of Essential Products in Kenya
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slot">
+                                <a href="http://">
+                                    <div class="p_pic">
+                                        <img src="assets/images/Enterprise-D.jpg" alt="graphical-vis" srcset="">
+                                    </div>
+                                    <div class="p_title">
+                                        XGBOOST: Bayesian optimisation for Hyperparameters
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-section" id="contact">
+                <div class="titleSection">
+                    <h1>Contact me:</h1>
+                </div>
+                <div class="inputs">
+                    <div class="short-input">
+                        <input type="text" name="full_name" id="full_name" placeholder="Your name">
+                        <input type="email" name="client_email" id="client_email" placeholder="yourname@provider.com">
+                    </div>
+                    <div class="body-input">
+                        <input type="text" name="msg_body" id="msg_body" placeholder="Message">
+                    </div>
+                </div>
+                <div class="btn-submit">
+                    <button type="submit">Send</button>
                 </div>
             </div>
         </div>
 
-        <!-- Contact -->
-        <div class="contact-section" id="contact">
-            <div class="titleSection">
-                <h1>Contact me:</h1>
-            </div>
-            <div class="inputs">
-                <div class="short-input">
-                    <input type="text" name="full_name" id="full_name" placeholder="Your name">
-                    <input type="email" name="client_email" id="client_email" placeholder="yourname@provider.com">
-                </div>
-                <div class="body-input">
-                    <input type="text" name="msg_body" id="msg_body" placeholder="Message">
-                </div>
-            </div>
-            <div class="btn-submit">
-                <button type="submit">Send</button>
-            </div>
-        </div>
+
+        <script>
+            $(document).ready(function() {
+                $('.slot').click(function() {
+                    var file = $(this).data('file');
+                    loadContent(file);
+                });
+
+                function loadContent(file) {
+                    // Use AJAX to fetch the content from the server
+                    $.ajax({
+                        url: file,
+                        dataType: 'html',
+                        success: function(response) {
+                            // Update the content container with the fetched HTML
+                            $('#main-container').html(response);
+                        },
+                        error: function() {
+                            console.error('Failed to load content.');
+                        }
+                    });
+                }
+            });
+        </script>
 
         <!-- Under construction notice - Temporary TODO:Remove aver completion -->
         <div class="nb"><h5>Under construction</h5></div>
