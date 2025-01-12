@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  <link rel="stylesheet" href="/assets/css/style.css">-->
+  <title>{{ site.title }}</title>
+  <style>
+      :root {
+          --maroon-border: #800000;
+          --text-color: #333;
+          --link-color: #0066cc;
+      }
+
+      body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          line-height: 1.3;
+          padding: 0;
+          color: var(--text-color);
+          max-width: 960px;
+          margin: 0 auto;
+          scroll-behavior: smooth;
+      }
+
+      header {
+          position: sticky;
+          top: 0;
+          background: white;
+          z-index: 100;
+          padding: 0.2rem 0;
+          border-bottom: 5px solid var(--maroon-border);
+          width: 100vw;
+          box-sizing: border-box;
+          margin-left: calc(-50vw + 50%);
+      }
+
+      .header-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 100%;
+          max-width: 960px;
+          margin: 0 auto;
+      }
+
+      .header-content > div:first-child {
+          display: flex;
+          flex-direction: column;
+      }
+
+      header h1 {
+          margin: 0;
+          font-size: 2rem;
+          font-weight: bold;
+      }
+
+      header p {
+          margin: 0.25rem 0;
+          color: #666;
+          font-size: 0.95rem;
+      }
+
+      nav {
+          display: flex;
+          /*justify-content: flex-end;*/
+          gap: 2rem;
+          padding: 0.5rem 0;
+      }
+
+      nav a {
+          text-decoration: none;
+          color: var(--text-color);
+          font-size: 0.95rem;
+      }
+
+      nav a:hover {
+          color: var(--link-color);
+      }
+
+      .container {
+          padding: 0 2rem;
+      }
+
+      .section {
+          padding-top: 8px;
+          margin-bottom: 3rem;
+      }
+
+      .profile {
+          display: grid;
+          grid-template-columns: 300px 1fr;
+          gap: 3rem;
+          margin: 2rem 0;
+          align-items: start;
+      }
+
+      .profile img {
+          width: 68%;
+          border-radius: 50%;
+      }
+
+      .contact {
+          text-align: center;
+          margin-top: 1rem;
+          font-size: 0.9rem;
+      }
+
+      h2 {
+          font-size: 1.5rem;
+          /*margin: 2rem 0 1rem;*/
+          font-weight: normal;
+      }
+
+      #publications {
+          margin-top: 2rem;
+      }
+
+      .publication-entry {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 1.5rem;
+          margin-bottom: 2rem;
+      }
+
+      .publication-entry img {
+          width: 200px;
+          height: auto;
+      }
+
+      .publication-entry h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: normal;
+      }
+
+      .publication-authors {
+          color: #666;
+          font-size: 0.9rem;
+          margin: 0.5rem 0;
+      }
+
+      em {
+          font-style: italic;
+          color: #666;
+      }
+
+      a {
+          color: var(--link-color);
+          text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+
+      .year-label {
+          font-weight: bold;
+          margin: 2rem 0 1rem;
+      }
+
+      @media (max-width: 768px) {
+          .profile {
+              grid-template-columns: 1fr;
+          }
+
+          .profile img {
+              max-width: 250px;
+              margin: 0 auto;
+          }
+
+          .header-content {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              gap: 1rem;
+          }
+
+          nav {
+              justify-content: center;
+          }
+      }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <div>
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.description }}</p>
+    </div>
+    <div>
+      <nav>
+        <a href="{{ site.baseurl }}/assets/resume.pdf" target="_blank">CV</a>
+        <a href="#research">Research Interests</a>
+        <a href="#publications">Publications</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section class="profile section">
+    <div>
+      <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Profile Photo">
+      <div class="contact">
+        <p>email[at]university[dot]edu</p>
+      </div>
+    </div>
+    <div>
+      <h2>About me</h2>
+      {{ content }}
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="research" class="section">
+    <h2>Research Interests</h2>
+    {% for research in site.research %}
+      <p>{{ research.content }}</p>
+    {% endfor %}
+  </section>
+
+  <hr>
+
+  <section id="publications" class="section">
+    <h2>Publications</h2>
+    {% assign publications_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
+    {% for year in publications_by_year %}
+    <div class="year-label">{{ year.name }}</div>
+    {% for pub in year.items %}
+    <div class="publication-entry">
+      {% if pub.image %}
+      <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}">
+      {% endif %}
+      <div>
+        <h3>{{ pub.title }}</h3>
+        <p class="publication-authors">{{ pub.authors }}</p>
+        <p><em>{{ pub.venue }}</em></p>
+        {% if pub.status %}<p>{{ pub.status }}</p>{% endif %}
+        {% if pub.links %}
+        <p>
+          {% for link in pub.links %}
+          <a href="{{ link.url }}">{{ link.text }}</a>
+          {% if forloop.last == false %} | {% endif %}
+          {% endfor %}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </section>
+
+  <hr>
+
+  <section id="resources" class="section">
+    <h2>Resources</h2>
+    <!-- Resources content goes here -->
+  </section>
+
+</div>
+</body>
+</html>

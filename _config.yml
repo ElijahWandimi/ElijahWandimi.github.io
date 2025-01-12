@@ -1,0 +1,24 @@
+title: Elijah Wandimi
+description: Ph.D. Candidate in Computer Science
+baseurl: ""
+url: "https://elijahwandimi.github.io"
+
+collections:
+  publications:
+    output: true
+    sort_by: year
+  research:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: default
+
